@@ -1,0 +1,31 @@
+# Local evidence and sensitive artifacts
+/evidence/private/
+*.evtx
+*.pcap
+*.pcapng
+*.log
+*.pem
+*.key
+*.pfx
+*.p12
+.env
+.env.*
+client.keys
+wazuh-passwords.txt
+wazuh-install-files.tar
+# Virtual machines and installers
+*.vdi
+*.vmdk
+*.vhd
+*.vhdx
+*.ova
+*.ovf
+*.iso
+*.msi
+*.exe
+# Local/editor files
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+.vscode/

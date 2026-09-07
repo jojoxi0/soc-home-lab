@@ -1,0 +1,22 @@
+<!-- EXAMPLE: unvalidated in Wazuh runtime. Marker visibility, not production detection. -->
+<group name="soc_lab,">
+  <rule id="100510" level="5">
+    <if_group>windows</if_group>
+    <field name="win.system.eventID">^4625$</field>
+    <field name="win.eventdata.targetUserName" type="pcre2">(?i)^soclab$</field>
+    <description>SOC lab: failed logon for dedicated exercise account</description>
+  </rule>
+  <rule id="100511" level="3">
+    <if_group>windows</if_group>
+    <field name="win.system.eventID">^4104$</field>
+    <field name="win.eventdata.scriptBlockText" type="pcre2">SOC-LAB-PS-001</field>
+    <description>SOC lab: harmless PowerShell marker observed</description>
+  </rule>
+  <rule id="100512" level="3">
+    <if_group>windows</if_group>
+    <field name="win.system.channel">^Microsoft-Windows-Sysmon/Operational$</field>
+    <field name="win.system.eventID">^1$</field>
+    <field name="win.eventdata.commandLine" type="pcre2">SOC-LAB-PROC-001</field>
+    <description>SOC lab: harmless process marker observed</description>
+  </rule>
+</group>

@@ -1,0 +1,16 @@
+<!-- EXAMPLE: merge localfile elements into existing agent ossec_config.
+     Do not replace the whole ossec.conf or duplicate existing channels. -->
+<ossec_config>
+  <localfile>
+    <location>Security</location>
+    <log_format>eventchannel</log_format>
+  </localfile>
+  <localfile>
+    <location>Microsoft-Windows-Sysmon/Operational</location>
+    <log_format>eventchannel</log_format>
+  </localfile>
+  <localfile>
+    <location>Microsoft-Windows-PowerShell/Operational</location>
+    <log_format>eventchannel</log_format>
+  </localfile>
+</ossec_config>
